@@ -393,28 +393,28 @@ const hebrewDate = function (inputDateOrYear, inputMonth, inputDate) {
 
   // convertToYear(5783);
 
-  if (hebrewDate === 1) hebrewDate = '`א';
-  if (hebrewDate === 2) hebrewDate = '`ב';
-  if (hebrewDate === 3) hebrewDate = '`ג';
-  if (hebrewDate === 4) hebrewDate = '`ד';
-  if (hebrewDate === 5) hebrewDate = '`ה';
-  if (hebrewDate === 6) hebrewDate = '`ו';
-  if (hebrewDate === 7) hebrewDate = '`ז';
-  if (hebrewDate === 8) hebrewDate = '`ח';
-  if (hebrewDate === 9) hebrewDate = '`ט';
-  if (hebrewDate === 10) hebrewDate = '`י';
-  if (hebrewDate === 11) hebrewDate = '`יא';
-  if (hebrewDate === 12) hebrewDate = '`יב';
-  if (hebrewDate === 13) hebrewDate = '`יג';
-  if (hebrewDate === 14) hebrewDate = '`יד';
-  if (hebrewDate === 15) hebrewDate = '`טו';
-  if (hebrewDate === 16) hebrewDate = '`טז';
-  if (hebrewDate === 17) hebrewDate = '`זי';
-  if (hebrewDate === 18) hebrewDate = '`חי';
-  if (hebrewDate === 19) hebrewDate = '`טי';
-  if (hebrewDate === 20) hebrewDate = '`כ';
-  if (hebrewDate === 21) hebrewDate = '`אכ';
-  if (hebrewDate === 22) hebrewDate = '`בכ';
+  if (hebrewDate === 1) hebrewDate = 'א';
+  if (hebrewDate === 2) hebrewDate = 'ב';
+  if (hebrewDate === 3) hebrewDate = 'ג';
+  if (hebrewDate === 4) hebrewDate = 'ד';
+  if (hebrewDate === 5) hebrewDate = 'ה';
+  if (hebrewDate === 6) hebrewDate = 'ו';
+  if (hebrewDate === 7) hebrewDate = 'ז';
+  if (hebrewDate === 8) hebrewDate = 'ח';
+  if (hebrewDate === 9) hebrewDate = 'ט';
+  if (hebrewDate === 10) hebrewDate = 'י';
+  if (hebrewDate === 11) hebrewDate = 'אי';
+  if (hebrewDate === 12) hebrewDate = 'בי';
+  if (hebrewDate === 13) hebrewDate = 'גי';
+  if (hebrewDate === 14) hebrewDate = 'די';
+  if (hebrewDate === 15) hebrewDate = 'וט';
+  if (hebrewDate === 16) hebrewDate = 'זט';
+  if (hebrewDate === 17) hebrewDate = 'זי';
+  if (hebrewDate === 18) hebrewDate = 'חי';
+  if (hebrewDate === 19) hebrewDate = 'טי';
+  if (hebrewDate === 20) hebrewDate = 'כ';
+  if (hebrewDate === 21) hebrewDate = 'אכ';
+  if (hebrewDate === 22) hebrewDate = 'בכ';
   if (hebrewDate === 23) hebrewDate = 'גכ';
   if (hebrewDate === 24) hebrewDate = 'דכ';
   if (hebrewDate === 25) hebrewDate = 'הכ';
@@ -432,8 +432,6 @@ const hebrewDate = function (inputDateOrYear, inputMonth, inputDate) {
     day_name: hebrewDayOfWeek(inputDateOrYear, inputMonth, inputDate),
   };
 };
-
-console.log('Hebrew Date:', hebrewDate(2023, 8, 10).year, hebrewDate(2023, 8, 10).month_name, hebrewDate(2023, 8, 10).date);
 
 const date = () => {
   return new Date().slice();
@@ -453,36 +451,40 @@ function checkMidnight() {
 
 // checkMidnight();
 
-for (let Year = 1990; Year <= 1992; Year++) {
-  let Month = 1;
-  for (Month; Month <= 12; Month++) {
-    console.log('Month', Month);
-    let Day = 1;
-    if (Month === 1 || Month === 3 || Month === 5 || Month === 7 || Month === 8 || Month === 10 || Month === 12) {
-      for (Day; Day <= 31; Day++) {
-        console.log(hebrewDate(Year, Month, Day));
-      }
-      Day = 1;
-    }
-    if (Month === 4 || Month === 6 || Month === 9 || Month === 11) {
-      for (Day; Day <= 30; Day++) {
-        console.log(hebrewDate(Year, Month, Day));
-      }
-      Day = 1;
-    }
-    if (Month === 2) {
-      if ((Year % 4 === 0 && Year % 100 !== 0) || (Year % 100 === 0 && Year % 400 !== 0) || Year % 400 === 0) {
-        for (Day; Day <= 29; Day++) {
-          console.log(hebrewDate(Year, Month, Day));
-        }
-        Day = 1;
-      } else {
-        for (Day; Day <= 28; Day++) {
-          console.log(hebrewDate(Year, Month, Day));
-        }
-        Day = 1;
-      }
-    }
-  }
-  Month = 1;
-}
+// for (let Year = 1990; Year <= 1992; Year++) {
+//   let Month = 1;
+//   for (Month; Month <= 12; Month++) {
+//     console.log('Month', Month);
+//     let Day = 1;
+//     if (Month === 1 || Month === 3 || Month === 5 || Month === 7 || Month === 8 || Month === 10 || Month === 12) {
+//       for (Day; Day <= 31; Day++) {
+//         console.log(hebrewDate(Year, Month, Day));
+//       }
+//       Day = 1;
+//     }
+//     if (Month === 4 || Month === 6 || Month === 9 || Month === 11) {
+//       for (Day; Day <= 30; Day++) {
+//         console.log(hebrewDate(Year, Month, Day));
+//       }
+//       Day = 1;
+//     }
+//     if (Month === 2) {
+//       if ((Year % 4 === 0 && Year % 100 !== 0) || (Year % 100 === 0 && Year % 400 !== 0) || Year % 400 === 0) {
+//         for (Day; Day <= 29; Day++) {
+//           console.log(hebrewDate(Year, Month, Day));
+//         }
+//         Day = 1;
+//       } else {
+//         for (Day; Day <= 28; Day++) {
+//           console.log(hebrewDate(Year, Month, Day));
+//         }
+//         Day = 1;
+//       }
+//     }
+//   }
+//   Month = 1;
+// }
+
+// console.log(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate());
+// console.log(hebrewDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()));
+module.exports = hebrewDate;
